@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Primera pagina con plantilla</title>
+</head>
+<body>
+    {% include "nav_bar.html" %}
+
+    <h1>
+        Hola Mundo, esta es mi primera pagina con Django utilizando plantillas
+    </h1>
+    <p> Mi nombre es: {{nombre_persona}} {{apellido_persona}}</p>
+    <p> La fecha y hora actual: {{fecha}}</p>
+    <p> d&iacute;a: {{fecha.day}} mes: {{fecha.month}} a&ntildeo: {{fecha.year}}</p>
+    <p> (Utilizando nomenclatura de punto) <br> Mi segundo nombre es: {{segundo_nombre}}</p>
+    <p> Acceder a una lista: 'temas' (nombre variable): {{temas}}</p>
+    <p> Acceder al primer elemento: 'temas.0': {{temas.0}}</p>
+    <p> Acceder a traves de una lista alojada en una variable (temas_del_cuso) al segundo elemento ->
+        (temas2.1): {{temas2.1}}</p>
+    <p><strong>Temas del curso:</strong></p>
+    <p>
+        <ul>
+        {% for contenidos in temas2 %}
+        <li>{{contenidos}}</li>
+        {% endfor %}
+        </ul>
+    </p>
+
+    <p><strong>Otros temas:</strong></p>
+    <p>
+        <ul>
+        {%if otros_temas %}
+            {% for contenidos in otros_temas %}
+                <li>{{contenidos}}</li>
+            {% endfor %}
+        {% else %}
+            <p>No hay elementos que mostrar</p>
+        {% endif %}
+        </ul>
+    </p>
+</body>
+</html>

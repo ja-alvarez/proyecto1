@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <style>
+        #bar {
+            margin: 0;
+            paggin: 0;
+            list-style: none;
+            text-transform: uppercase;
+        }
+        #bar li {
+            display: inline;
+            margin: 0 20px;
+        }
+    </style>
+
+</head>
+<body>
+<h1 style="text-align:center"> Practicando herencia de plantillas </h1>
+
+    <ul id="bar">
+        <li> Home </li>        
+        <li> Services </li>        
+        <li> About us </li>        
+        <li> Contact </li>
+    </ul>
+    
+
+    <h3 style="background-color:darkolivegreen; color:white; text-align:center"> Curso de programacion: django, Pildoras Informaticas</h3>
+
+    {% block content %} 
+    
+    {% endblock %}
+
+    <p style="background-color:darkolivegreen; color:white; text-align:right"> Pie de pagina. Gracias por su visita  </p>
+
+</body>
+</html>
